@@ -1,0 +1,6 @@
+spring:
+  config:
+    import: application.local.yml
+server:
+  error:
+    include-stacktrace: never
