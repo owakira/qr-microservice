@@ -6,3 +6,4 @@ s3:
   secretKey: 1234567
   endpoint: http://localhost:8080
   region: kz-almaty-1
+  bucketName: something

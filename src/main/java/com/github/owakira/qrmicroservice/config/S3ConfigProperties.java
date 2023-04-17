@@ -10,4 +10,5 @@ public class S3ConfigProperties {
     private String secretKey;
     private String endpoint;
     private String region;
+    private String bucketName;
 }

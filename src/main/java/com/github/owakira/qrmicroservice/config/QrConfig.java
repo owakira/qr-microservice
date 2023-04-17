@@ -37,4 +37,9 @@ public class QrConfig {
                 ))
                 .build();
     }
+
+    @Bean
+    public String bucketName() {
+        return s3ConfigProperties.getBucketName();
+    }
 }
