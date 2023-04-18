@@ -29,7 +29,7 @@ public class QrControllerTest {
         Mockito.when(qrService.generateQr(new GenerateQrDTO(request.getText()))).thenReturn(qr);
 
         var response = qrController.generateQr(request);
-        Assertions.assertEquals(qr.getText() + "1", response.getText());
+        Assertions.assertEquals(qr.getText(), response.getText());
         Assertions.assertEquals(qr.getFilename(), response.getFilename());
     }
 }
