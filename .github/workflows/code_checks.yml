@@ -17,8 +17,12 @@ jobs:
           java-version: "11"
           distribution: "temurin"
 
-      - name: Build
-        run: mvn --batch-mode -DskipTests package
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
 
       - name: Test
-        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+        run: mvn -B test --file pom.xml
